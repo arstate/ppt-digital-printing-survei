@@ -104,8 +104,11 @@ const App: React.FC = () => {
             className="w-screen h-screen flex items-center justify-center bg-gradient-to-br from-purple-200 via-purple-300 to-yellow-200"
             style={{ pageBreakAfter: index === slideComponents.length - 1 ? 'auto' : 'always' }}
           >
-            <div className="w-[95vw] h-[95vh]">
+            <div className="relative w-[95vw] h-[95vh]">
               <SlideComponent />
+              <div className="absolute bottom-8 right-8 text-xl font-semibold text-slate-500">
+                {index + 1} / {slideComponents.length}
+              </div>
             </div>
           </div>
         ))}

@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 // ICONS
@@ -83,13 +84,16 @@ const PriceCategory: React.FC<{title: string; items: { name: string; price: stri
 // SLIDE COMPONENTS
 export const Slide0_Intro: React.FC = () => (
     <SlideWrapper title="Digital Printing Survei">
-        <div className="flex flex-col justify-center items-center h-full text-center">
+        <div className="relative flex flex-col justify-center items-center h-full text-center">
             <h2 className="text-5xl md:text-6xl font-extrabold text-slate-800 tracking-wide">
                 BACHTIAR ARYANSYAH PUTRA
             </h2>
             <p className="mt-4 text-3xl text-slate-600 font-medium">
                 24091367032
             </p>
+             <div className="absolute bottom-0 right-0 text-xl text-slate-500 font-medium">
+                Play Presentation: <a href="https://is.gd/digitalprinting" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">is.gd/digitalprinting</a>
+            </div>
         </div>
     </SlideWrapper>
 );
