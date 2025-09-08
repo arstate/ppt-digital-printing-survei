@@ -9,6 +9,7 @@ import {
   Slide3_Testimonial,
   Navigation,
   FullscreenButton,
+  DownloadPdfButton,
 } from './components/Slides';
 
 const slideComponents = [
@@ -51,6 +52,10 @@ const App: React.FC = () => {
       console.error(`Error attempting to toggle fullscreen: ${err instanceof Error ? err.message : String(err)}`);
     }
   }, []);
+  
+  const handlePrint = () => {
+    window.print();
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -73,22 +78,37 @@ const App: React.FC = () => {
   const CurrentSlideComponent = slideComponents[currentSlide];
 
   return (
-    <main className="fixed inset-0 h-screen w-screen overflow-hidden bg-gradient-to-br from-purple-200 via-purple-300 to-yellow-200 flex items-center justify-center font-sans select-none">
-      <div className="relative w-[95vw] h-[95vh] flex items-center justify-center transition-opacity duration-300">
-        <CurrentSlideComponent />
-        <div className="absolute bottom-8 right-8 text-xl font-semibold text-slate-500">
-          {currentSlide + 1} / {slideComponents.length}
+    <>
+      <main className="fixed inset-0 h-screen w-screen overflow-hidden bg-gradient-to-br from-purple-200 via-purple-300 to-yellow-200 flex items-center justify-center font-sans select-none print:hidden">
+        <div className="relative w-[95vw] h-[95vh] flex items-center justify-center transition-opacity duration-300">
+          <CurrentSlideComponent />
+          <div className="absolute bottom-8 right-8 text-xl font-semibold text-slate-500">
+            {currentSlide + 1} / {slideComponents.length}
+          </div>
         </div>
-      </div>
 
-      <div className={`absolute bottom-4 left-4 z-10 transition-all duration-300 ease-in-out ${controlsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-        <FullscreenButton isFullscreen={isFullscreen} onClick={handleFullscreen} />
-      </div>
+        <div className={`absolute bottom-4 left-4 z-10 flex items-center gap-4 transition-all duration-300 ease-in-out ${controlsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+          <FullscreenButton isFullscreen={isFullscreen} onClick={handleFullscreen} />
+          {!isFullscreen && <DownloadPdfButton onClick={handlePrint} />}
+        </div>
 
-      <div className={`absolute bottom-4 w-full flex justify-center items-center gap-4 transition-all duration-300 ease-in-out ${controlsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-        <Navigation onPrev={prevSlide} onNext={nextSlide} />
+        <div className={`absolute bottom-4 w-full flex justify-center items-center gap-4 transition-all duration-300 ease-in-out ${controlsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+          <Navigation onPrev={prevSlide} onNext={nextSlide} />
+        </div>
+      </main>
+
+      <div className="hidden print:block">
+        {slideComponents.map((SlideComponent, index) => (
+          <div 
+            key={index} 
+            className="w-screen h-screen p-12"
+            style={{ pageBreakAfter: index === slideComponents.length - 1 ? 'auto' : 'always' }}
+          >
+            <SlideComponent />
+          </div>
+        ))}
       </div>
-    </main>
+    </>
   );
 };
 

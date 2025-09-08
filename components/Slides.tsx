@@ -14,6 +14,9 @@ const ExpandIcon: React.FC = () => (
 const CompressIcon: React.FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 4H4m0 0v4M4 4l5 5m7-5h4m0 0v4m-4-4l-5 5M8 20H4m0 0v-4m4 4l5-5m7 5h4m0 0v-4m-4 4l-5-5" /></svg>
 );
+const PdfIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+);
 const LocationIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
 );
@@ -47,8 +50,14 @@ export const FullscreenButton: React.FC<{ isFullscreen: boolean; onClick: () => 
   </GlassButton>
 );
 
+export const DownloadPdfButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
+  <GlassButton onClick={onClick} className="p-3">
+    <PdfIcon />
+  </GlassButton>
+);
+
 const SlideWrapper: React.FC<{ title: string; children: React.ReactNode; subtitle?: string; }> = ({ title, subtitle, children }) => (
-  <div className="w-full h-full bg-white/30 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl p-16 md:p-20 text-slate-800 flex flex-col overflow-hidden">
+  <div className="w-full h-full bg-white/30 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl p-16 md:p-20 text-slate-800 flex flex-col overflow-hidden print:shadow-none print:border print:border-gray-300 print:rounded-none print:bg-white print:backdrop-blur-none">
     <div className="flex-shrink-0 mb-6">
       <h1 className="text-5xl md:text-6xl font-bold text-purple-800 tracking-tight">{title}</h1>
       {subtitle && <p className="text-2xl text-yellow-700 font-medium mt-1">{subtitle}</p>}
