@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AJ Digital Printing Presentation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @media print {
+        /* Force browsers to print background colors and images */
+        *, *::before, *::after {
+          print-color-adjust: exact !important;
+          -webkit-print-color-adjust: exact !important;
+        }
+      }
+    </style>
   <script type="importmap">
 {
   "imports": {

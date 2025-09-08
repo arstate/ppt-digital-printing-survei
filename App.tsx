@@ -101,10 +101,12 @@ const App: React.FC = () => {
         {slideComponents.map((SlideComponent, index) => (
           <div 
             key={index} 
-            className="w-screen h-screen p-12"
+            className="w-screen h-screen flex items-center justify-center bg-gradient-to-br from-purple-200 via-purple-300 to-yellow-200"
             style={{ pageBreakAfter: index === slideComponents.length - 1 ? 'auto' : 'always' }}
           >
-            <SlideComponent />
+            <div className="w-[95vw] h-[95vh]">
+              <SlideComponent />
+            </div>
           </div>
         ))}
       </div>
