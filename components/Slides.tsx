@@ -57,7 +57,7 @@ export const DownloadPdfButton: React.FC<{ onClick: () => void }> = ({ onClick }
 );
 
 const SlideWrapper: React.FC<{ title: string; children: React.ReactNode; subtitle?: string; }> = ({ title, subtitle, children }) => (
-  <div className="w-full h-full bg-white/30 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl p-16 md:p-20 text-slate-800 flex flex-col overflow-hidden print:shadow-none print:border print:border-gray-300 print:rounded-none print:bg-white print:backdrop-blur-none">
+  <div className="w-full h-full bg-white/30 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl p-16 md:p-20 text-slate-800 flex flex-col overflow-hidden print:shadow-none print:bg-white print:backdrop-blur-none">
     <div className="flex-shrink-0 mb-6">
       <h1 className="text-5xl md:text-6xl font-bold text-purple-800 tracking-tight">{title}</h1>
       {subtitle && <p className="text-2xl text-yellow-700 font-medium mt-1">{subtitle}</p>}
