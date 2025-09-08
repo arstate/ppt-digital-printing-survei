@@ -21,10 +21,10 @@ const LocationIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
 );
 const WhatsappIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM7.25 13.5a.75.75 0 01-.75-.75V8.5a.75.75 0 011.5 0v3.5a.75.75 0 01-.75.75zM10 13.5a.75.75 0 01-.75-.75V7.25a.75.75 0 011.5 0v5.5a.75.75 0 01-.75.75zM12.75 13.5a.75.75 0 01-.75-.75V9.75a.75.75 0 011.5 0v3a.75.75 0 01-.75.75z" /></svg>
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczNw0-F5B5rrchRymZZQ8VEYf9z-M7bHLGmSFTO5wL2Mx6sO6L2HD1XpRBb38kdwKkVNn08iH63OAGJQNmOQPR8JecnY9Mf8vGCXWFjgpvvQl6Tztyo=w2400" alt="WhatsApp Icon" className="h-8 w-8 object-contain" />
 );
 const InstagramIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 2a4 4 0 100 8 4 4 0 000-8zM2 10a8 8 0 1116 0 8 8 0 01-16 0z" clipRule="evenodd" /><path fillRule="evenodd" d="M12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczP-T4yCEDnyUKVujJtr4aHu6qA3oNwa6k7K-TyY7AjwSpEI4nKEaLqOLa1WMkd3uNAFVTODK65eJsvBYrRYn0PuvOvdFMo75LgHVSsxMWKfv7CB9I4=w2400" alt="Instagram Icon" className="h-8 w-8 object-contain" />
 );
 const ClockIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
